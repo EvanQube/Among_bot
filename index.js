@@ -25,5 +25,5 @@ __**Command list**__
 > \`skip\`, \`stop\`,  \`pause\`, \`resume\`
 > \`nowplaying\`, \`queue\`, \`volume\``)
            .setFooter("©️ 2020 Zhycorp Nation", "https://api.zhycorp.xyz/assets/images/icon.jpg");
-       message.channel.send(helpembed);
+       msg.channel.send(helpembed);
 })

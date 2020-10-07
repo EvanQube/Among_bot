@@ -8,5 +8,8 @@
   },
   "keywords": [],
   "author": "Evan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
 }

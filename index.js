@@ -14,16 +14,21 @@ bot.on('message', msg => {
 })
 
 bot.on('message', msg => {
-if (msg.content === prefix + 'help') {
-       const helpembed = new MessageEmbed()
-           .setColor("BLUE")
-           .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
-           .setDescription(`
-__**Command list**__
-> \`play\` > **\`play [title/url]\`**
-> \`search\` > **\`search [title]\`**
-> \`skip\`, \`stop\`,  \`pause\`, \`resume\`
-> \`nowplaying\`, \`queue\`, \`volume\``)
-           .setFooter("©️ 2020 Zhycorp Nation", "https://api.zhycorp.xyz/assets/images/icon.jpg");
-       msg.channel.send(helpembed);
+    if(msg.content === prefix + 'help') {
+        const helpembed = new Discord.MessageEmbed()
+        .setColor('BLUE')
+        .setAuthor('Among Us по-русски', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.gg/C44mCXv')
+        .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+        .setTitle('Помощь')
+        .setDescription('Список доступных команд')
+        .addFields(
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Музыкальный бот', value: 'Его команды', inline: true },
+		{ name: 'JuniperBot', value: 'Его команды', inline: true },
+    )
+    .setImage('https://i.imgur.com/wSTFkRM.png')
+    .setTimestamp()
+    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+    msg.channel.send(helpembed)
+    }
 })

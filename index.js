@@ -1,19 +1,19 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 prefix = ">";
-client.login(process.env.token);
+bot.login(process.env.token);
 
-client.on('ready', () => {
+bot.on('ready', () => {
     console.log('Bot in on !');
 })
 
-client.on('message', msg => {
+bot.on('message', msg => {
     if(msg.content === prefix + 'ping') {
         msg.channel.send('pong');
     }
 })
 
-client.on('message', msg => {
+bot.on('message', msg => {
 if (msg === prefix + "help") {
        const helpembed = new MessageEmbed()
            .setColor("BLUE")

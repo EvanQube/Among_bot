@@ -14,7 +14,7 @@ bot.on('message', msg => {
 })
 
 bot.on('message', msg => {
-if (msg === prefix + "help") {
+if (msg.content === prefix + 'help') {
        const helpembed = new MessageEmbed()
            .setColor("BLUE")
            .setAuthor(bot.user.tag, bot.user.displayAvatarURL())

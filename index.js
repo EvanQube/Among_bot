@@ -12,3 +12,18 @@ client.on('message', msg => {
         msg.channel.send('pong');
     }
 })
+
+client.on('message', msg => {
+if (msg === prefix + "help") {
+       const helpembed = new MessageEmbed()
+           .setColor("BLUE")
+           .setAuthor(bot.user.tag, bot.user.displayAvatarURL())
+           .setDescription(`
+__**Command list**__
+> \`play\` > **\`play [title/url]\`**
+> \`search\` > **\`search [title]\`**
+> \`skip\`, \`stop\`,  \`pause\`, \`resume\`
+> \`nowplaying\`, \`queue\`, \`volume\``)
+           .setFooter("©️ 2020 Zhycorp Nation", "https://api.zhycorp.xyz/assets/images/icon.jpg");
+       message.channel.send(helpembed);
+}

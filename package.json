@@ -16,4 +16,6 @@
     "fluent-ffmpeg": "^2.1.2",
     "ytdl-core": "^3.3.0"
   }
+  "engines": {
+    "node": "12.19.0"
 }

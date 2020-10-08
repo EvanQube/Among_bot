@@ -77,9 +77,22 @@ client.on('message', message => {
 });
 
 
-client.on('message', function(message) {
-     if(message.content[0] === prefix + 'report') {
-         let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-         message.channel.send('Command + ' + command);
-     }
+client.on('message', msg => {
+  if(msg.content startsWith(prefix + 'rep') {
+    const userment = message.mentions.users.first();
+    const repembed = new Discord.MessageEmbed()
+    .setColor('BLUE')
+    .setAuthor('Among Us по-русски', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.gg/C44mCXv')
+    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+    .setTitle('Помощь')
+    .setDescription('Список доступных команд')
+    .addFields(
+{ name: '\u200B', value: '\u200B' },
+{ name: 'Тест', value: 'Его команды', inline: true },
+{ name: userment, value: 'Его команды', inline: true },
+)
+.setImage('https://i.imgur.com/wSTFkRM.png')
+.setTimestamp()
+.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+  }
  });

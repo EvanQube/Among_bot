@@ -2,7 +2,6 @@
   "name": "Among_Bot",
   "version": "1.0.0",
   "description": "A Discord bot!",
-  "repository"; "https://github.com/EvanQube/Among_bot.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

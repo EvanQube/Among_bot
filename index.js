@@ -3,8 +3,7 @@ const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
 
-client.user.setActivity('Смотрит >help', { type: 'WATCHING' })
- });
+client.user.setActivity('Смотрит >help', { type: 'WATCHING' });
 
 client.on('message', msg => {
     if(msg.content === prefix + 'ping') {

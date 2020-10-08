@@ -69,3 +69,11 @@ client.on('message', message => {
     }
   }
 });
+
+
+bot.on('message', function(message) {
+       if(message.content[0] === PREFIX) {
+           let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+           message.channel.send('Command + ' + command);
+       }
+   });

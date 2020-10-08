@@ -1,9 +1,10 @@
-
-  "name": "Among_Bot",
-  "version": "1.0.1",
-  "description": "A Discord bot!",
-  "main": "index.js",
-  "scripts": {
+  {
+    "name": "Among_Bot",
+    "version": "1.0.0",
+    "description": "Bot project",
+    "main": "index.js",
+    "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"},
-  "author": "Evan",
-  "license": "MIT",
+    "author": "Evan",
+    "license": "MIT"
+  }

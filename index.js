@@ -33,12 +33,13 @@ client.on('message', msg => {
     }
 })
 
+//Команда Kick
 client.on('message', message => {
 
   if (!message.guild) return;
 
 
-  if (message.content.startsWith('?kick')) { //**This is the command, this says if someone says ?kick then pay attention to teh rest to teh bot.**\\
+  if (message.content.startsWith(prefix + 'kick')) { //**This is the command, this says if someone says ?kick then pay attention to teh rest to teh bot.**\\
 
     const user = message.mentions.users.first(); // This says if you mention this user, it is talking about that user
 
@@ -48,22 +49,22 @@ client.on('message', message => {
 
       if (member) {
 
-        member.kick('Optional reason that will display in the audit logs').then(() => {
+        member.kick('Причина будет написана в логе аудита').then(() => {
 
-          message.reply(`Successfully kicked ${user.tag}, you should feel bad! They will never be able to rejoin until they click join again!`);
+          message.reply(`Кикнут ${user.tag}`);
         }).catch(err => {
 
-          message.reply('I was unable to kick the member. Check if their roles are higher then mine or if they have administrative permissions!');
+          message.reply('Я не могу кикнуть этого человека, моя роль должна быть выше!');
 
           console.error(err);
         });
       } else {
 
-        message.reply('That user isn\'t in this guild!');
+        message.reply('Этот человек не на сервере!');
       }
 
     } else {
-      message.reply('You didn\'t mention the user to kick!'); // Thus is creating a message so that you know if you failed
+      message.reply('Вы должны упомянуть человека, которого хотите кикнуть!'); // Thus is creating a message so that you know if you failed
 // The / is to show the script that the (') is not the end of it
     }
   }

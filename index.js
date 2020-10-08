@@ -79,11 +79,8 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-  if(msg.member.roles.cache.get('762784035831152661') {
     if (msg.content === prefix + 'report' {
       let report = msg.content;
        msg.channels.cache.get('762780755259555865').send(report.slice(1));
     }
-  }
-
 });

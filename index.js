@@ -7,7 +7,7 @@ client.on("ready", () =>{
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setPresence({
   game:{
-    name:'Слушает >help'
+    name:'Слушай'
   },
   status:'online'
 });
@@ -78,15 +78,8 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-    if (msg.content === prefix + 'report') {
+    if (msg.content == prefix + 'report') {
       let report = msg.content.split(1);
-       msg.channels.cache.get('762780755259555865').send(report.join());
+       msg.channels.cache.get('762780755259555865').send(report.join);
     }
 });
-
-client.on('message', function(message) {
-        if(message.content[0] === '>report') {
-            let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-            message.channel.send('Report = ' + command);
-        }
-    });

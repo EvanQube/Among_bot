@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const { prefix, token } = require('config.json');
-client.login(token);
+prefix = ">";
+client.login(process.env.token);
 
 client.on('ready', () => {
     console.log('Bot in on !');

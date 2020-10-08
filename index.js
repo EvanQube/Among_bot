@@ -3,6 +3,7 @@ const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
 
+
 client.user.setActivity('Смотрит >help', { type: 'WATCHING' });
 
 client.on('message', msg => {
@@ -66,4 +67,12 @@ client.on('message', message => {
 // The / is to show the script that the (') is not the end of it
     }
   }
+});
+
+client.on('message', msg =>{
+  if(msg.startsWith(prefix + 'rand'))
+  number = 3;
+  let imageNumber = Math.floor(Math.random() *(number - 1 + 1)) + 1;
+  msg.channel.send({files: ["./images/" + imageNumber + ".png"]}) 
+
 });

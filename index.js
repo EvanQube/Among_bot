@@ -60,4 +60,5 @@ if (message.content.startsWith(prefix + 'kick')) { //**This is the command, this
 
     } else {
       message.reply('You didn\'t mention the user to kick!'); //
+}
 })

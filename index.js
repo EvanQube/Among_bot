@@ -78,7 +78,7 @@ client.on('message', message => {
 });
 
 
-client.on('message', function(message) {
+client.on('message', function(message {
   const [command, ...args] = message.content.split(" ");
 
   switch(command){
@@ -87,5 +87,4 @@ client.on('message', function(message) {
     break;
     //....
   }
-       }
-   });
+});

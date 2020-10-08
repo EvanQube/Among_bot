@@ -80,8 +80,7 @@ client.on('message', message => {
 
 client.on('message', msg => {
     if (msg.content === prefix + 'report') {
-      let report = msg.content;
-      const rep = report.slice(1);
-       msg.channels.cache.get('762780755259555865').send(rep.join);
+      let report = msg.content.split(1);
+       msg.channels.cache.get('762780755259555865').send(report.join);
     }
 });

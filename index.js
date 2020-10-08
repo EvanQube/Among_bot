@@ -83,3 +83,10 @@ client.on('message', msg => {
        msg.channels.cache.get('762780755259555865').send(report.join());
     }
 });
+
+client.on('message', function(message) {
+        if(message.content[0] === '>report') {
+            let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+            message.channel.send('Report = ' + command);
+        }
+    });

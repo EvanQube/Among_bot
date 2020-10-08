@@ -3,14 +3,7 @@ const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
 
-client.on("ready", () =>{
-    console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-  game:{
-    name:'Слушай'
-  },
-  status:'online'
-});
+client.user.setActivity('Смотрит >help', { type: 'WATCHING' })
  });
 
 client.on('message', msg => {
@@ -79,7 +72,6 @@ client.on('message', message => {
 
 client.on('message', msg => {
   if(msg.content startsWith(prefix + 'rep') {
-    const userment = message.mentions.users.first();
     const repembed = new Discord.MessageEmbed()
     .setColor('BLUE')
     .setAuthor('Among Us по-русски', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.gg/C44mCXv')
@@ -89,7 +81,7 @@ client.on('message', msg => {
     .addFields(
 { name: '\u200B', value: '\u200B' },
 { name: 'Тест', value: 'Его команды', inline: true },
-{ name: userment, value: 'Его команды', inline: true },
+{ name: 'df', value: 'Его команды', inline: true },
 )
 .setImage('https://i.imgur.com/wSTFkRM.png')
 .setTimestamp()

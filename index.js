@@ -78,8 +78,12 @@ client.on('message', message => {
 
 
 client.on('message', msg => {
-    if (msg.content == prefix + 'report') {
-      let report = msg.content.split(1);
-       msg.channels.cache.get('762780755259555865').send(report.join);
-    }
+const [command, ...args] = msg.content.split(" ");
+
+switch(command){
+  case "!Command":
+     msg.channel.send('Command + ' + args.join(" "));
+  break;
+  //....
+}
 });

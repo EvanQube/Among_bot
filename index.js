@@ -77,13 +77,9 @@ client.on('message', message => {
 });
 
 
-client.on('message', msg => {
-const [command, ...args] = msg.content.split(" ");
-
-switch(command){
-  case "!Command":
-     msg.channel.send('Command + ' + args.join(" "));
-  break;
-  //....
-}
-});
+client.on('message', function(message) {
+     if(message.content[0] === prefix + 'report') {
+         let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
+         message.channel.send('Command + ' + command);
+     }
+ });

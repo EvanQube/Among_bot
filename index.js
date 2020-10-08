@@ -72,7 +72,7 @@ client.on('message', message => {
 
 
 client.on('message', function(message) {
-       if(message.content[0] === PREFIX) {
+       if(message.content[0] === prefix) {
            let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
            message.channel.send('Command + ' + command);
        }

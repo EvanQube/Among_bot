@@ -41,7 +41,8 @@ client.on('message', msg => {
 const args = message.content.slice(prefix.length).trim().split(' ');
 const command = args.shift().toLowerCase();
 
-else if (command === 'args-info') {
+else
+ if (command === 'args-info') {
 	if (!args.length) {
 		return message.channel.send(`Вы не написали аргументы, ${message.author}!`);
 	}

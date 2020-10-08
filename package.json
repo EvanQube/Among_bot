@@ -16,5 +16,9 @@
 "repository": {
   "type": "git",
   "url": "git+https://github.com/EvanQube/Among_bot.git"
-}
+},
+"dependencies": {
+    "discord.js": "^12.3.1",
+    "request": "2.81.0"
+  }
 }

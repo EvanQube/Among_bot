@@ -33,6 +33,7 @@ client.on('message', msg => {
     }
 })
 
+client.on('message', message => {
 if (message.content.startsWith(prefix + 'kick')) { //**This is the command, this says if someone says ?kick then pay attention to teh rest to teh bot.**\\
 
     const user = message.mentions.users.first(); // This says if you mention this user, it is talking about that user
@@ -59,3 +60,4 @@ if (message.content.startsWith(prefix + 'kick')) { //**This is the command, this
 
     } else {
       message.reply('You didn\'t mention the user to kick!'); //
+})

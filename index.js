@@ -79,8 +79,8 @@ client.on('message', message => {
 
 
 client.on('message', function(message) {
-       if(message.content[0] === prefix) {
+       if(message.content[0] === prefix + "report") {
            let command = message.content.substring(message.content.indexOf(" ") + 1, message.content.length);
-           message.channel.send('Command + ' + command);
+           message.channels.cache.get('762780755259555865').send('Report ' + command);
        }
    });

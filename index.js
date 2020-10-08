@@ -6,12 +6,11 @@ client.login(process.env.token);
 client.on("ready", () =>{
     console.log(`Logged in as ${client.user.tag}!`);
     client.user.setPresence({
-        status: "online",  //You can show online, idle....
-        game: {
-            name: "Слушает >help",  //The message shown
-            type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
-        }
-    });
+  game:{
+    name:'Слушает >help'
+  },
+  status:'online'
+});
  });
 
 client.on('message', msg => {
@@ -81,6 +80,6 @@ client.on('message', message => {
 client.on('message', msg => {
     if (msg.content === prefix + 'report') {
       let report = msg.content.split(1);
-       msg.channels.cache.get('762780755259555865').send(report.join);
+       msg.channels.cache.get('762780755259555865').send(report.join());
     }
 });

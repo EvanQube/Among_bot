@@ -3,9 +3,16 @@ const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
 
-client.on('ready', () => {
-    console.log('Bot in on !');
-})
+client.on("ready", () =>{
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setPresence({
+        status: "online",  //You can show online, idle....
+        game: {
+            name: "Слушает >help",  //The message shown
+            type: "LISTENING" //PLAYING: WATCHING: LISTENING: STREAMING:
+        }
+    });
+ });
 
 client.on('message', msg => {
     if(msg.content === prefix + 'ping') {

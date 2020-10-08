@@ -67,24 +67,3 @@ client.on('message', message => {
     }
   }
 });
-
-
-client.on('message', msg => {
-  if(msg.content startsWith(prefix + 'rep') {
-    const repembed = new Discord.MessageEmbed()
-    .setColor('BLUE')
-    .setAuthor('Among Us по-русски', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.gg/C44mCXv')
-    .setThumbnail('https://i.imgur.com/wSTFkRM.png')
-    .setTitle('Помощь')
-    .setDescription('Список доступных команд')
-    .addFields(
-{ name: '\u200B', value: '\u200B' },
-{ name: 'Тест', value: 'Его команды', inline: true },
-{ name: 'df', value: 'Его команды', inline: true },
-)
-.setImage('https://i.imgur.com/wSTFkRM.png')
-.setTimestamp()
-.setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-msg.channel.send(repembed);
-  }
- });

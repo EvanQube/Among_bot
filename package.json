@@ -18,6 +18,7 @@
     "url": "git+https://github.com/EvanQube/Among_bot.git"
   },
   "dependencies": {
+    "discord-xp": "^1.0.6",
     "discord.js": "^12.3.1",
     "fs": "0.0.1-security",
     "request": "2.81.0"

@@ -1,34 +1,25 @@
-const fs = require('fs');
-const Discord = require('discord.js');
-const prefix = ">";
-const token = process.env.token;
-
+const Discord = require("discord.js");
 const client = new Discord.Client();
+const prefix = '>';
+const token = process.env.token;
+const fs = require('fs');
 client.commands = new Discord.Collection();
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endWith('.js'));
+for(const file of commandFiles) {
+  const command = require('./commands/${file}');
 
-for (const file of commandFiles) {
-	const command = require(`./commands/${file}`);
-	client.commands.set(command.name, command);
+  client.commands.set(command.name, command)
 }
 
-client.once('ready', () => {
-	console.log('Ready!');
+client.on('ready', async() => {
+  console.log('${client.user.username} is ready !')
+  client.user.setActivity('>help', { type: 'WATCHING' })
 });
 
-client.on('message', message => {
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+client.on('message', msg => {
+  if(msg.content === prefix + 'ping') {
+    client.commands.get('ping').execute(message, args);
+  }
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
-
-	if (!client.commands.has(command)) return;
-
-	try {
-		client.commands.get(command).execute(message, args);
-	} catch (error) {
-		console.error(error);
-		message.reply('there was an error trying to execute that command!');
-	}
 });

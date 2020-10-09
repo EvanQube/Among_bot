@@ -10,15 +10,16 @@
   "author": "Evan",
   "license": "ISC",
   "engines": {
-  "node": "12.19.0",
-  "npm": "6.14.8"
-},
-"repository": {
-  "type": "git",
-  "url": "git+https://github.com/EvanQube/Among_bot.git"
-},
-"dependencies": {
+    "node": "12.19.0",
+    "npm": "6.14.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanQube/Among_bot.git"
+  },
+  "dependencies": {
     "discord.js": "^12.3.1",
+    "fs": "0.0.1-security",
     "request": "2.81.0"
   }
 }

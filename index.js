@@ -82,9 +82,9 @@ client.on('message', message => {
   let messageArray = message.content.split(" ");
      let args = messageArray.slice(1);
      let cmd = messageArray[0];
- 
+
       if(cmd === '>mute'){
-        if (!message.member.roles.cache.get('762784035831152661')) return
+        if (!message.member.roles.cache.get('762784035831152661')) return;
 
          else {
              var member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));

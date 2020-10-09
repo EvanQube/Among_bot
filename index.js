@@ -1,4 +1,4 @@
-const { Client, MessageEmbed } = require("discord.js");
+const Discord = require("discord.js");
 const client = new Client();
 prefix = ">";
 client.login(process.env.token);

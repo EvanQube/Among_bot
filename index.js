@@ -25,8 +25,16 @@ client.on('message', message =>{
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if(command === 'ping'){
-        client.commands.get('ping').execute(message, args);
+    if(command === 'among'){
+        client.commands.get('among').execute(message, args);
+    }
+
+    if(command === 'help'){
+        client.commands.get('help').execute(message, args);
+    }
+
+    if(command === 'rand') {
+      client.commands.get('rand').execute(message, args);
     }
 });
 

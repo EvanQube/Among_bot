@@ -53,4 +53,4 @@ client.on('message', msg =>{
 .setFooter('Among Us по-русски', 'https://imgur.com/Tc6QKK1');
 msg.channel.send(helpembed)
 }
-)};
+});

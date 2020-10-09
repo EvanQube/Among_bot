@@ -38,10 +38,9 @@ client.on('message', message => {
   if (!message.guild) return;
 
 
-  if (message.content.startsWith(prefix + 'kick')) { //**This is the command, this says if someone says ?kick then pay attention to teh rest to teh bot.**\\
+  if (message.content.startsWith(prefix + 'kick')) {
 
-    const user = message.mentions.users.first(); // This says if you mention this user, it is talking about that user
-
+    const user = message.mentions.users.first();
     if (user) {
 
       const member = message.guild.member(user);
@@ -63,11 +62,11 @@ client.on('message', message => {
       }
 
     } else {
-      message.reply('Вы должны упомянуть человека, которого хотите кикнуть!'); // Thus is creating a message so that you know if you failed
-// The / is to show the script that the (') is not the end of it
+      message.reply('Вы должны упомянуть человека, которого хотите кикнуть!');
     }
   }
 });
+
 
 client.on('message', msg =>{
   if(msg.content === prefix + 'rand') {
@@ -75,40 +74,4 @@ client.on('message', msg =>{
   let imageNumber = Math.floor(Math.random() *(number - 1 + 1)) + 1;
   msg.channel.send({files: ["./images/" + imageNumber + ".png"]})
 }
-});
-
-
-client.on('message', message => {
-  let messageArray = message.content.split(" ");
-     let args = messageArray.slice(1);
-     let cmd = messageArray[0];
-
-      if(cmd === '>mute'){
-
-        if (message.member.roles.cache.get('762784035831152661')) {
-             var member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
-             if(!member) return message.reply('Please Provide a Member to TempMute.')
-
-             let mainrole = message.guild.roles.cache.find(role => role.name === "Member");
-             let role = message.guild.roles.cache.find(role => role.name === "Muted");
-
-             if (!role) return message.reply("Couldn't find the 'muted' role.")
-
-             let time = args[1];
-             if (!time) {
-                 return message.reply("You didnt specify a time!");
-             }
-             member.roles.add(role.id);
-
-             message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
-
-             setTimeout( function () {
-                 member.roles.remove(role.id);
-                 message.channel.send(`@${member.user.tag} has been unmuted.`)
-             }, ms(time));
-
-         } else {
-             return message.channel.send('You dont have perms.')
-         }
-     }
 });

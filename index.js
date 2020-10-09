@@ -78,39 +78,31 @@ client.on('message', msg =>{
 });
 
 
+client.on('message', msg => {
+  let messageArray = msg.content.split(" ");
+  let args = messageArray.slice(1);
+  let cmd = messageArray[0];
 
+  if(cmd === prefix + 'mute') {
+    var member = msg.guild.member(msg.mention.users.first() || msg.guild.members.get(args[0]));
+    if(!args[0]) return msg.reply('Вы должны упомянуть человека')
 
-// get the role by id:
-const mutedRole = message.guild.roles.cache.get('<764158862872936449>');
+    let mainrole = msg.guild.role.cache.get('762780755259555862')
+    let role = msg.guild.role.cache.get('764158862872936449')
 
-// if there is no `Muted` role, send an error
-if (!mutedRole)
- return message.channel.send('There is no Muted role on this server');
+    let time = args[1];
+    if(!time) {return msg.reply('Вы должны указать время')}
 
- const target = message.mentions.members.first();
+    member.roles.remove(mainrole)
+    member.roles.add(role)
 
- client.on('message', msg => {
-   if(msg.content === prefix + 'mute') {
+    msg.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
 
-     if (!message.content.startsWith(prefix) || message.author.bot) return;
+           setTimeout( function () {
+               member.roles.add(mainrole)
+               member.roles.remove(role);
+               message.channel.send(`@${member.user.tag} has been unmuted.`)
+           }, ms(time));
+  }
 
-     const args = message.content.slice(prefix.length + msg.mentions.members.first();).trim().split(' ');
-     const command = args.shift().toLowerCase();
-
-     else if (command === 'args-info') {
- if (!args.length) {
-   return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
- }
-
- message.channel.send(`Command name: ${command}\nArguments: ${args}`);
-}
-
-
-     setTimeout(() => {
-  target.roles.remove(mutedRole); // remove the role
-      }, <time>)
-   }
-
-
-
- });
+});

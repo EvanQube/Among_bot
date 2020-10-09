@@ -1,5 +1,7 @@
-const Discord = require("discord.js");
+const fs = require('fs');
+const { Discord, MessageEmbed } = require("discord.js");
 const client = new Discord.Client();
+client.commands = new Discord.Collection();
 prefix = ">";
 client.login(process.env.token);
 
@@ -16,7 +18,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
     if(msg.content === prefix + 'help') {
-        const helpembed = new Discord.MessageEmbed()
+        const helpembed = new MessageEmbed()
         .setColor('BLUE')
         .setAuthor('Among Us по-русски', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.gg/C44mCXv')
         .setThumbnail('https://i.imgur.com/wSTFkRM.png')
@@ -24,8 +26,7 @@ client.on('message', msg => {
         .setDescription('Список доступных команд')
         .addFields(
 		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Музыкальный бот', value: 'Его команды', inline: true },
-		{ name: 'JuniperBot', value: 'Его команды', inline: true },
+		{ name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us'},
     )
     .setImage('https://i.imgur.com/wSTFkRM.png')
     .setTimestamp()

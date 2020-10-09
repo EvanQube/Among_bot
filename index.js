@@ -14,11 +14,6 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-
-client.once('ready', () => {
-    console.log('Codelyon is online!');
-});
-
 client.on('message', message =>{
     if(!message.content.startsWith(prefix) || message.author.bot) return;
 
@@ -27,13 +22,13 @@ client.on('message', message =>{
 
     if(command === 'among'){
         client.commands.get('among').execute(message, args);
-    }
+    };
 
-    if(command === 'help'){
+    else if(command === 'help'){
         client.commands.get('help').execute(message, args);
-    }
+    };
 
-    if(command === 'rand') {
+    else if(command === 'rand') {
       client.commands.get('rand').execute(message, args);
     }
 });

@@ -2,7 +2,6 @@ module.exports = {
 	name: 'help',
 	description: 'helpEmbed',
 	execute(message, args) {
-    if(msg.content === prefix + 'help') {
     const helpembed = new Discord.MessageEmbed()
     .setColor('BLUE')
     .setAuthor('Among Us по-русски', 'https://imgur.com/Tc6QKK1', 'https://discord.gg/C44mCXv')
@@ -18,5 +17,4 @@ module.exports = {
 .setFooter('Among Us по-русски', 'https://imgur.com/Tc6QKK1');
 msg.channel.send(helpembed)
 }
-	},
 };

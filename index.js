@@ -84,7 +84,7 @@ client.on('message', msg => {
   let cmd = messageArray[0];
 
   if(cmd === prefix + 'mute') {
-    var member = msg.guild.member(msg.mention.users.first() || msg.guild.members.get(args[0]));
+    var member = msg.guild.member(msg.mention.user.first() || msg.guild.members.get(args[0]));
     if(!args[0]) return msg.reply('Вы должны упомянуть человека')
 
     let mainrole = msg.guild.role.cache.get('762780755259555862')

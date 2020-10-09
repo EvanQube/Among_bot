@@ -17,6 +17,13 @@ client.on('ready', async() => {
   client.user.setActivity('>help', { type: 'WATCHING' })
 });
 
+
+client.on('message', message => {
+	if (!message.content.startsWith(prefix) || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+	const command = args.shift().toLowerCase();
+
 if (!client.commands.has(command)) return;
 
 try {
@@ -25,3 +32,4 @@ try {
 	console.error(error);
 	message.reply('there was an error trying to execute that command!');
 }
+});

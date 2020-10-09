@@ -12,14 +12,19 @@ for(const file of commandFiles) {
   client.commands.set(command.name, command)
 }
 
+
 client.on('ready', async() => {
   console.log('${client.user.username} is ready !')
   client.user.setActivity('>help', { type: 'WATCHING' })
 });
 
-client.on('message', msg => {
-  if(msg.content === prefix + 'ping') {
-    client.commands.get('ping').execute(message, args);
-  }
+client.on('message', message =>{
+    if(!message.content.startsWith(prefix) || message.author.bot) return;
 
+    const args = message.content.slice(prefix.length).split(/ +/);
+    const command = args.shift().toLowerCase();
+
+    if(command === 'ping'){
+        client.commands.get('ping').execute(message, args);
+    }
 });

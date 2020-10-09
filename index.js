@@ -16,3 +16,12 @@ client.on('ready', async() => {
   console.log('${client.user.username} is ready !')
   client.user.setActivity('>help', { type: 'WATCHING' })
 });
+
+if (!client.commands.has(command)) return;
+
+try {
+	client.commands.get(command).execute(message, args);
+} catch (error) {
+	console.error(error);
+	message.reply('there was an error trying to execute that command!');
+}

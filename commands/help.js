@@ -1,8 +1,8 @@
 module.exports = {
 	name: 'help',
 	description: 'helpEmbed',
-	execute(Discord, client, message, args) {
-    const helpembed = new Discord.MessageEmbed()
+	execute(helpembed, client, message, args) {
+    helpembed
     .setColor('BLUE')
     .setAuthor('Among Us по-русски', 'https://imgur.com/Tc6QKK1', 'https://discord.gg/C44mCXv')
     .setTitle('Помощь')

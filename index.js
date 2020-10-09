@@ -5,6 +5,8 @@ client.login(process.env.token);
 
 const fs = require('fs');
 
+const helpembed = new Discord.MessageEmbed();
+
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));

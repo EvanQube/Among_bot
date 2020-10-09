@@ -78,31 +78,38 @@ client.on('message', msg =>{
 });
 
 
-client.on('message', msg => {
-  let messageArray = msg.content.split(" ");
-  let args = messageArray.slice(1);
-  let cmd = messageArray[0];
+client.on('message', message => {
+  let messageArray = message.content.split(" ");
+     let args = messageArray.slice(1);
+     let cmd = messageArray[0];
+ 
+      if(cmd === '>mute'){
+        if (!message.member.roles.cache.get('762784035831152661')) return
 
-  if(cmd === prefix + 'mute') {
-    var member = msg.guild.member(msg.mention.user.first() || msg.guild.members.get(args[0]));
-    if(!args[0]) return msg.reply('Вы должны упомянуть человека')
+         else {
+             var member = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[0]));
+             if(!member) return message.reply('Please Provide a Member to TempMute.')
 
-    let mainrole = msg.guild.role.cache.get('762780755259555862')
-    let role = msg.guild.role.cache.get('764158862872936449')
+             let mainrole = message.guild.roles.cache.find(role => role.name === "Member");
+             let role = message.guild.roles.cache.find(role => role.name === "Muted");
 
-    let time = args[1];
-    if(!time) {return msg.reply('Вы должны указать время')}
+             if (!role) return message.reply("Couldn't find the 'muted' role.")
 
-    member.roles.remove(mainrole)
-    member.roles.add(role)
+             let time = args[1];
+             if (!time) {
+                 return message.reply("You didnt specify a time!");
+             }
+             member.roles.add(role.id);
 
-    msg.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
+             message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`)
 
-           setTimeout( function () {
-               member.roles.add(mainrole)
-               member.roles.remove(role);
-               message.channel.send(`@${member.user.tag} has been unmuted.`)
-           }, ms(time));
-  }
+             setTimeout( function () {
+                 member.roles.remove(role.id);
+                 message.channel.send(`@${member.user.tag} has been unmuted.`)
+             }, ms(time));
 
+         } else {
+             return message.channel.send('You dont have perms.')
+         }
+     }
 });

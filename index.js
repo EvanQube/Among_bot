@@ -22,11 +22,11 @@ client.on('message', message =>{
 
     if(command === 'among'){
         client.commands.get('among').execute(message, args);
-    };
+    }
 
     else if(command === 'help'){
         client.commands.get('help').execute(message, args);
-    };
+    }
 
     else if(command === 'rand') {
       client.commands.get('rand').execute(message, args);
@@ -34,6 +34,6 @@ client.on('message', message =>{
 });
 
 client.on('ready', async() => {
-  console.log('${client.user.username} is ready !')
+  console.log('Bot is ready !')
   client.user.setActivity('>help', { type: 'WATCHING' })
 });

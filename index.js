@@ -3,8 +3,10 @@ const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
 
-
-client.user.setActivity('Смотрит >help', { type: 'WATCHING' });
+client.on('ready', async() => {
+  console.log('${client.user.username} is ready !')
+  client.user.setActivity('>help', { type: 'WATCHING' })
+});
 
 client.on('message', msg => {
     if(msg.content === prefix + 'ping') {
@@ -32,7 +34,6 @@ client.on('message', msg => {
     }
 })
 
-//Команда Kick
 client.on('message', message => {
 
   if (!message.guild) return;
@@ -73,6 +74,6 @@ client.on('message', msg =>{
   if(msg.startsWith(prefix + 'rand'))
   number = 3;
   let imageNumber = Math.floor(Math.random() *(number - 1 + 1)) + 1;
-  msg.channel.send({files: ["./images/" + imageNumber + ".png"]}) 
+  msg.channel.send({files: ["./images/" + imageNumber + ".png"]})
 
 });

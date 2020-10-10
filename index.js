@@ -27,6 +27,10 @@ client.on('message', message =>{
     else if(command === 'rand') {
       client.commands.get('rand').execute(message, args);
     }
+
+    else if(command === 'kick') {
+      client.commands.get('kick').execute(message, args);
+    }
 });
 
 client.on('ready', async() => {

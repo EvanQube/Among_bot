@@ -58,9 +58,10 @@ msg.channel.send(helpembed)
 
 client.on('message', msg =>{
 
-    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if(msg.author.bot) return;
+
     if(msg.content === '<rules') {
-if(msg.member.roles.cache.get('759381562079838288')) {
+      if(msg.member.roles.cache.get('759381562079838288')) {
     const rulesembed = new Discord.MessageEmbed()
     .setColor('ORANGE')
 .setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')
@@ -74,9 +75,9 @@ if(msg.member.roles.cache.get('759381562079838288')) {
 .setTimestamp()
 .setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 msg.channel.send(rulesembed)
-}}
-
+}
 else {
   msg.channel.send('У вас нет прав на использование этой команды!')
+}
 }
 });

@@ -31,6 +31,10 @@ client.on('message', message =>{
     else if(command === 'kick') {
       client.commands.get('kick').execute(message, args);
     }
+
+    else if(command === 'ban') {
+      client.commands.get('ban').execute(message, args);
+    }
 });
 
 client.on('ready', async() => {
@@ -49,6 +53,7 @@ client.on('message', msg =>{
 .setDescription('Список доступных команд')
 .addFields(
 { name: '\u200B', value: '\u200B' },
+{ name: 'Модерация', value: '>kick - кикает человека' + "\n" + '>ban - банит человека' },
 { name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us' + "\n" + '>among - проверка работоспособности бота'},
 )
 .setImage('https://i.imgur.com/AYlRRkt.png')

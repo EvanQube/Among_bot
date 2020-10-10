@@ -57,10 +57,10 @@ msg.channel.send(helpembed)
 
 
 client.on('message', msg =>{
-  if(msg.member.roles.cache.get('759381562079838288')) {
 
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;
     if(msg.content === prefix + 'rules') {
+if(msg.member.roles.cache.get('759381562079838288')) {
     const rulesembed = new Discord.MessageEmbed()
     .setColor('ORANGE')
 .setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')

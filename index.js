@@ -59,7 +59,6 @@ msg.channel.send(helpembed)
 client.on('message', msg =>{
 
     if(msg.author.bot) return;
-
     if(msg.content === '<rules') {
       if(msg.member.roles.cache.get('759381562079838288')) {
     const rulesembed = new Discord.MessageEmbed()

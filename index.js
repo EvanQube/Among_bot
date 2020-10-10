@@ -77,6 +77,6 @@ msg.channel.send(rulesembed)
 }}
 
 else {
-  msg.channel.send('У вас нет прав на испоьлзование этой команды!')
+  msg.channel.send('У вас нет прав на использование этой команды!')
 }
 });

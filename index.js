@@ -45,7 +45,7 @@ client.on('message', msg =>{
 .setDescription('Список доступных команд')
 .addFields(
 { name: '\u200B', value: '\u200B' },
-{ name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us', "\n", '>among - проверка работоспособности бота'},
+{ name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us' + "\n" + '>among - проверка работоспособности бота'},
 )
 .setImage('https://i.imgur.com/AYlRRkt.png')
 .setTimestamp()

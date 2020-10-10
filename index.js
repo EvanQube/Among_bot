@@ -57,6 +57,8 @@ msg.channel.send(helpembed)
 
 
 client.on('message', msg =>{
+  if(message.member.roles.cache.get('759381562079838288')) {
+
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;
     if(msg.content === prefix + 'rules') {
     const rulesembed = new Discord.MessageEmbed()
@@ -72,5 +74,8 @@ client.on('message', msg =>{
 .setTimestamp()
 .setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 msg.channel.send(rulesembed)
+}}
+else {
+  msg.channel.send('У вас нет прав на испоьлзование этой команды!')
 }
 });

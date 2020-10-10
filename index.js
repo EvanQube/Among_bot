@@ -28,13 +28,6 @@ client.on('message', message =>{
       client.commands.get('rand').execute(message, args);
     }
 
-    else if(command === 'kick') {
-      client.commands.get('kick').execute(message, args);
-    }
-
-    else if(command === 'ban') {
-      client.commands.get('ban').execute(message, args);
-    }
 });
 
 client.on('ready', async() => {

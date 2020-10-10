@@ -47,7 +47,7 @@ client.on('message', msg =>{
 { name: '\u200B', value: '\u200B' },
 { name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us', "\n", '>among - проверка работоспособности бота'},
 )
-.setImage('https://i.imgur.com/r75HyZj.png')
+.setImage('https://i.imgur.com/AYlRRkt.png')
 .setTimestamp()
 .setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 msg.channel.send(helpembed)

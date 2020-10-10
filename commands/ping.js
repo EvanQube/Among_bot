@@ -1,7 +1,7 @@
 module.exports = {
-	name: 'among',
-	description: 'Among us',
+	name: 'ping',
+	description: 'Ping',
 	execute(message, args) {
-		message.channel.send('Us!');
+		message.channel.send('pong!');
 	},
 };

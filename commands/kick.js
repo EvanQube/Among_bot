@@ -10,7 +10,7 @@ module.exports = {
       // If the member is in the guild
       if (member) {
         member
-          .kick('Optional reason that will display in the audit logs')
+          .kick(args)
           .then(() => {
             // We let the message author know we were able to kick the person
             message.reply(`Successfully kicked ${user.tag}`);
@@ -19,17 +19,17 @@ module.exports = {
             // An error happened
             // This is generally due to the bot not being able to kick the member,
             // either due to missing permissions or role hierarchy
-            message.reply('I was unable to kick the member');
+            message.reply('Я не могу кинкуть этого человека!');
             // Log the error
             console.error(err);
           });
       } else {
         // The mentioned user isn't in this guild
-        message.reply("That user isn't in this guild!");
+        message.reply("Этот чеоловек не на сервере!");
       }
       // Otherwise, if no user was mentioned
     } else {
-      message.reply("You didn't mention the user to kick!");
+      message.reply("Вам нужно упомянуть человека для кика!");
     }
 	},
 };

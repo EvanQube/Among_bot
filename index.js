@@ -26,3 +26,24 @@ client.on('ready', async() => {
   console.log('Bot is ready !')
   client.user.setActivity('>help', { type: 'PLAYING' })
 });
+
+
+client.on('message', msg =>{
+    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if(msg.content === prefix + 'help') {
+    const helpembed = new Discord.MessageEmbed()
+    .setColor('ORANGE')
+.setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')
+.setTitle('Помощь')
+.setDescription('Список доступных команд')
+.addFields(
+{ name: '\u200B', value: '\u200B' },
+{ name: 'Модерация', value: '>kick - кикает человека' + "\n" + '>ban - банит человека' },
+{ name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us' + "\n" + '>among - проверка работоспособности бота'},
+)
+.setImage('https://i.imgur.com/AYlRRkt.png')
+.setTimestamp()
+.setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
+msg.channel.send(helpembed)
+}
+});

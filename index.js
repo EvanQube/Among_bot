@@ -33,9 +33,9 @@ client.on('message', message =>{
 client.on('ready', async() => {
   console.log('Bot is on !')
   client.user.setPresence({
-    status: 'online',
+    status: 'idle',
     activity: {
-        name: 'with depression',
+        name: '>help' + '\n' + 'Автор - Evan🎃#6456',
         type: 'STREAMING',
         url: 'https://www.twitch.tv/monstercat'
     }

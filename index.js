@@ -32,7 +32,14 @@ client.on('message', message =>{
 
 client.on('ready', async() => {
   console.log('Bot is ready !')
-  client.user.setActivity('>help', { type: 'WATCHING' })
+  client.user.setStatus('available')
+   client.user.setPresence({
+       game: {
+           name: 'with depression',
+           type: "STREAMING",
+           url: "https://www.twitch.tv/monstercat"
+       }
+   });
 });
 
 

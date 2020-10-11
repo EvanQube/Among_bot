@@ -66,6 +66,9 @@ client.on('message', msg =>{
 .setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')
 .setTitle('**Правила сервера**')
 .setDescription('Обязательно к прочтению')
+.setImage('https://i.imgur.com/AYlRRkt.png');
+.setTimestamp()
+.setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 .addFields(
 { name: '\u200B', value: '\u200B' },
 { name: '\u200B', value:
@@ -83,9 +86,6 @@ client.on('message', msg =>{
 '12) Агрессия/провокация на ссор запрещено.' + "\n" +
 '13) Торг/продажа чеголибо запрещена.' + "\n" +
 '14) Злоупотребление матом запрещено.' + "\n" });
-.setImage('https://i.imgur.com/AYlRRkt.png')
-.setTimestamp()
-.setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 msg.channel.send(rulesembed)
 }
 else {

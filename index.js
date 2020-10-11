@@ -35,7 +35,7 @@ client.on('ready', async() => {
   client.user.setPresence({
     status: 'idle',
     activity: {
-        name: '>help' + '\n' + 'Автор - Evan🎃#6456',
+        name: '>help | Автор - Evan🎃#6456',
         type: 'LISTENING',
         url: 'https://www.twitch.tv/monstercat'
     }

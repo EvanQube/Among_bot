@@ -36,7 +36,7 @@ client.on('ready', async() => {
     status: 'idle',
     activity: {
         name: '>help' + '\n' + 'Автор - Evan🎃#6456',
-        type: 'STREAMING',
+        type: 'LISTENING',
         url: 'https://www.twitch.tv/monstercat'
     }
 })

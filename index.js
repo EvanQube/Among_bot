@@ -65,9 +65,9 @@ client.on('message', msg =>{
     .setColor('ORANGE')
 .setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')
 .setTitle('**Правила сервера**')
-.setDescription('Обязательно к прочтению')
+.setDescription('**Незнание правил не освобождает от ответственности**')
 .addFields(
-{ name: '\u200B', value:
+{ name: '**Входя на сервер, вы автоматически соглашаетесь со всеми правилами**', value:
 '**1)** Любые оскорбления в сторону расы/пола/семьи запрещены.' + '\n' +
 '**2)** Любой пиар в любом виде **запрещен.** _(В ЛС ТОЖЕ НЕЛЬЗЯ!)_' + '\n' +
 '**3)** **Запрещено** вести себя неадекватно и/или непристойно.' + '\n' +
@@ -86,6 +86,7 @@ client.on('message', msg =>{
 .setTimestamp()
 .setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 msg.channel.send(rulesembed)
+msg.delete().catch();
 }
 else {
   msg.channel.send('У вас нет прав на использование этой команды!')

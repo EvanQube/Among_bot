@@ -46,7 +46,9 @@ client.on('message', msg =>{
 
     else if(command === 'role') {
         if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
-          client.commands.get('tyan').execute(msg, args);
+          let role = msg.guild.roles.cache.get('760097698442379284');
+          let member = msg.mentions.members.first();
+          member.roles.add(role).catch(console.error);
         }
         else {
           msg.channel.send('**У вас нет прав на использование этой команды!**')}}

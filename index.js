@@ -71,12 +71,12 @@ client.on('guildMemberAdd', member => {
     let myGuild = client.guilds.cache.get('756567959526309958')
  // Server Id Goes Here
 
-    let membercount = myGuild.memberCount;
+    let membercount = myGuild.memberCount.toLocaleString();
 
     const membercountchannel = myGuild.channels.cache.get('765263675434074123');
  // Channel Id Goes Here
 
-    membercountchannel.setName(`Участников: ${myGuild.memberCount.toLocaleString()}`)
+    membercountchannel.setName(`Участников:` + memberCount)
 
 
 })
@@ -88,12 +88,12 @@ client.on('guildMemberRemove', member => {
     let myGuild = client.guilds.cache.get('756567959526309958')
  // Server Id Goes Here
 
-    let membercount = myGuild.memberCount;
+    let membercount = myGuild.memberCount.toLocaleString();
 
     const membercountchannel = myGuild.channels.cache.get('765263675434074123');
  // Channel Id Goes Here
 
-    membercountchannel.setName(`Участников: ${myGuild.memberCount.toLocaleString()}`)
+    membercountchannel.setName(`Участников:` + memberCount)
 
 })
 

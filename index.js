@@ -78,7 +78,7 @@ msg.channel.send(helpembed)
 
 client.on('message', msg =>{
 
-    if(!msg.content.startsWith(prefix) || msg.author.bot || ) return;
+    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
     if(msg.content === prefix + 'rules') {
       if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
     const rulesembed = new Discord.MessageEmbed()

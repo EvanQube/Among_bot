@@ -29,7 +29,7 @@ client.on('message', message =>{
     }
 
     else if(command === 'nick'){
-        const targetmember = message.mentionedMembers[0];
+        const targetmember = message.mentionedMembers.first();
         targetmember.modifyNickname(args.after(2))
     }
 });

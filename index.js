@@ -29,7 +29,8 @@ client.on('message', message =>{
     }
 
     else if(command === 'nick'){
-        message.guild.members.cache.get(client.user.id).setNickname("args");
+        const targetmember = message.mentionedMembers[0];
+        targetmember.modifyNickname(args.after(2))
     }
 });
 

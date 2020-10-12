@@ -36,13 +36,20 @@ client.on('message', msg =>{
       }
       else {
       prefix = args;
-    }}
-    else {
+      }}
+      else {
       msg.channel.send('**У вас нет прав на использование этой команды!**')}}
 
-    else if(command === 'idea') { //Идеи
+      else if(command === 'idea') { //Идеи
       client.users.cache.get('352389928543584256').send(args);
     }
+
+    else if(command === 'role')
+        if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
+          client.commands.get('tyan').execute(msg, args);
+        }
+        else {
+          msg.channel.send('**У вас нет прав на использование этой команды!**')}}
 });
 
 client.on('ready', async() => {

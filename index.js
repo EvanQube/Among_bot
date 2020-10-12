@@ -14,18 +14,18 @@ for(const file of commandFiles){
     client.commands.set(command.name, command);
 }
 
-client.on('message', message =>{
-    if(!message.content.startsWith(prefix) || message.author.bot) return;
+client.on('message', msg =>{
+    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
 
-    const args = message.content.slice(prefix.length).split(/ +/);
+    const args = msg.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
     if(command === 'among'){
-        client.commands.get('among').execute(message, args);
+        client.commands.get('among').execute(msg, args);
     }
 
     else if(command === 'randmeme') {
-      client.commands.get('randmeme').execute(message, args);
+      client.commands.get('randmeme').execute(msg, args);
     }
 
     else if(command === 'prefix') {
@@ -36,6 +36,9 @@ client.on('message', message =>{
       prefix = args;
     }}
 
+    else if(command === 'idea') {
+      client.commands.get('idea').execute(client, msg, args);
+    }
 });
 
 client.on('ready', async() => {
@@ -72,6 +75,7 @@ prefix + 'randmeme - скидывает рандомный мем, связва�
 .setTimestamp()
 .setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
 msg.channel.send(helpembed)
+msg.delete().catch();
 }
 });
 

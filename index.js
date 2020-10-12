@@ -67,6 +67,17 @@ client.on('ready', async() => {
 });
 
 
+client.on('ready', () => {
+  let myGuild = client.guilds.get('756567959526309958');
+  let memberCount = myGuild.memberCount;
+  console.log(memberCount);
+  let memberCountChannel = myGuild.channels.get('765263675434074123');
+  memberCountChannel.setName('Участников:' + memberCount)
+  .then(result => console.log(result))
+  .catch(error => console.log(error));
+
+});
+
 client.on('message', msg =>{
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;
     if(msg.content === prefix + 'help') {

@@ -1,6 +1,6 @@
 module.exports = client => {
 
-const updateMembers = guild => {
+  const updateMembers = (guild) => {
   const channel = guild.channels.cache.get('765263675434074123')
   channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)
 }

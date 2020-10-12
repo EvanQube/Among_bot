@@ -20,24 +20,28 @@ client.on('message', msg =>{
     const args = msg.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if(command === 'among'){
+    if(command === 'among'){ //Проверка работоспособности
         client.commands.get('among').execute(msg, args);
     }
 
-    else if(command === 'randmeme') {
+    else if(command === 'randmeme') { //рандомные мемы
       client.commands.get('randmeme').execute(msg, args);
     }
 
-    else if(command === 'prefix') {
+    else if(command === 'prefix') { //Изменение префикса
+      if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
+
       if(args === 'default') {
         prefix = ">";
       }
       else {
       prefix = args;
     }}
+    else {
+      msg.channel.send('**У вас нет прав на использование этой команды!**')}}
 
-    else if(command === 'idea') {
-      client.commands.get('idea').execute(client, msg, args);
+    else if(command === 'idea') { //Идеи
+      client.users.cache.get('352389928543584256').send(args);
     }
 });
 
@@ -67,8 +71,8 @@ client.on('message', msg =>{
 { name: 'Фан', value:
 prefix + 'rand - скидывает случайную картинку по Among Us _(временно не работает)_' + "\n" +
 prefix + 'among - проверка работоспособности бота'+ "\n" +
-prefix + 'randmeme - скидывает рандомный мем, связванный с сервером'
-
+prefix + 'randmeme - скидывает рандомный мем, связванный с сервером' + "\n" +
+prefix + 'idea - есть идеи для бота ? Эта команда для тебя!'
 },
 )
 .setImage('https://i.imgur.com/AYlRRkt.png')
@@ -113,7 +117,7 @@ msg.channel.send(rulesembed)
 msg.delete().catch();
 }
 else {
-  msg.channel.send('У вас нет прав на использование этой команды!')
+  msg.channel.send('**У вас нет прав на использование этой команды!**')
 }
 }
 });

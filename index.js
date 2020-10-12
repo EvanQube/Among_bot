@@ -29,7 +29,7 @@ client.on('message', message =>{
     }
 
     else if(command === 'nick'){
-        message.guild.members.get(client.user.id).setNickname("args");
+        message.guild.members.cache.get(client.user.id).setNickname("args");
     }
 });
 

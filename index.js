@@ -28,7 +28,7 @@ client.on('message', message =>{
       client.commands.get('rand').execute(message, args);
     }
 
-    if(command === 'nick'){
+    else if(command === 'nick'){
         client.commands.get('nick').execute(message, args);
     }
 });

@@ -8,6 +8,6 @@ const updateMembers = guild => {
 client.on('guildMemberAdd', (member) => updateMembers(member.guild))
 client.on('guildMemberRemove', (member) => updateMembers(member.guild))
 
-const guild = client.cache.get('756567959526309958')
+const guild = client.guilds.cache.get('756567959526309958')
 updateMembers(guild)
 }

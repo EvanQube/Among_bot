@@ -72,7 +72,7 @@ let memberCountChannel = myGuild.channels.cache.get('765263675434074123');
 
 client.on('guildMemberAdd', member => {
   console.log(memberCount);
-  memberCountChannel.setName('Участников:' + memberCount);
+  member.guild.channels.get('765263675434074123').setName('Участников:' + memberCount);
 
 });
 

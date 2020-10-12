@@ -28,6 +28,10 @@ client.on('message', message =>{
       client.commands.get('randmeme').execute(message, args);
     }
 
+    else if(command === 'prefix') {
+      prefix = args;
+    }
+
 });
 
 client.on('ready', async() => {

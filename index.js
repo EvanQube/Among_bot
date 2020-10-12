@@ -61,7 +61,12 @@ client.on('message', msg =>{
 .setDescription('Список доступных команд')
 .addFields(
 { name: '\u200B', value: '\u200B' },
-{ name: 'Фан', value: '>rand - скидывает случайную картинку по Among Us _(временно не работает)_' + "\n" + '>among - проверка работоспособности бота'},
+{ name: 'Фан', value:
+prefix + 'rand - скидывает случайную картинку по Among Us _(временно не работает)_' + "\n" +
+prefix + 'among - проверка работоспособности бота'+ "\n" +
+prefix + 'randmeme - скидывает рандомный мем, связванный с сервером'
+
+},
 )
 .setImage('https://i.imgur.com/AYlRRkt.png')
 .setTimestamp()
@@ -73,9 +78,9 @@ msg.channel.send(helpembed)
 
 client.on('message', msg =>{
 
-    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if(!msg.content.startsWith(prefix) || msg.author.bot || ) return;
     if(msg.content === prefix + 'rules') {
-      if(msg.member.roles.cache.get('759381562079838288')) {
+      if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
     const rulesembed = new Discord.MessageEmbed()
     .setColor('ORANGE')
 .setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')

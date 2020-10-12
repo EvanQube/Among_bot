@@ -76,7 +76,7 @@ client.on('guildMemberAdd', member => {
     const membercountchannel = myGuild.channels.cache.get('765263675434074123');
  // Channel Id Goes Here
 
-    membercountchannel.setName(`Участников:` + membercount)
+    membercountchannel.setName(`Участников:` + member.guild.memberCount)
 
 
 })
@@ -93,7 +93,7 @@ client.on('guildMemberRemove', member => {
     const membercountchannel = myGuild.channels.cache.get('765263675434074123');
  // Channel Id Goes Here
 
-    membercountchannel.setName(`Участников:` + membercount)
+    membercountchannel.setName(`Участников:` + member.guild.memberCount)
 
 })
 

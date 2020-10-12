@@ -14,7 +14,7 @@ for(const file of commandFiles){
 }
 
 
-const channel = guild.channels.cache.get('765263675434074123')
+const channel = client.guild.channels.cache.get('765263675434074123')
 channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)
 
 client.on('guildMemberAdd', (member) => {channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)})

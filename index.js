@@ -67,7 +67,7 @@ client.on('ready', async() => {
 });
 
 
-client.on('ready', () => {
+client.on('guildMemberAdd', member => {
   let myGuild = client.guilds.cache.get('756567959526309958');
   let memberCount = myGuild.memberCount;
   console.log(memberCount);

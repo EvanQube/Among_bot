@@ -66,12 +66,12 @@ client.on('ready', async() => {
 })
 });
 
+let myGuild = client.guilds.cache.get('756567959526309958');
+let memberCount = myGuild.memberCount;
+let memberCountChannel = myGuild.channels.cache.get('765263675434074123');
 
 client.on('guildMemberAdd', member => {
-  let myGuild = client.guilds.cache.get('756567959526309958');
-  let memberCount = myGuild.memberCount;
   console.log(memberCount);
-  let memberCountChannel = myGuild.channels.cache.get('765263675434074123');
   memberCountChannel.setName('Участников:' + memberCount);
 
 });

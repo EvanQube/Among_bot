@@ -67,16 +67,36 @@ client.on('ready', async() => {
 });
 
 client.on('guildMemberAdd', member => {
-  console.log(memberCount);
-  const channel = member.guild.channels.get('765263675434074123');
-  channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)
-});
+
+    let myGuild = client.guilds.cache.get('756567959526309958')
+ // Server Id Goes Here
+
+    let membercount = myGuild.memberCount;
+
+    const membercountchannel = myGuild.channels.cache.get('765263675434074123');
+ // Channel Id Goes Here
+
+    membercountchannel.setName('Member Count: ' + membercount)
+
+
+})
+
+
 
 client.on('guildMemberRemove', member => {
-  console.log(memberCount);
-  const channel = member.guild.channels.get('765263675434074123');
-  channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)
-});
+
+    let myGuild = client.guilds.cache.get('756567959526309958')
+ // Server Id Goes Here
+
+    let membercount = myGuild.memberCount;
+
+    const membercountchannel = myGuild.channels.cache.get('765263675434074123');
+ // Channel Id Goes Here
+
+    membercountchannel.setName('Member Count: ' + membercount)
+
+})
+
 
 client.on('message', msg =>{
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;

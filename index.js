@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
-
+const memberCount = require('./member-count')
 const fs = require('fs');
 
 client.commands = new Discord.Collection();
@@ -64,17 +64,9 @@ client.on('ready', async() => {
         url: 'https://www.twitch.tv/monstercat'
     }
 })
+memberCount(client)
 });
 
-let myGuild = client.guilds.cache.get('756567959526309958');
-let memberCount = myGuild.memberCount;
-let memberCountChannel = myGuild.channels.cache.get('765263675434074123');
-
-client.on('guildMemberAdd', member => {
-  console.log(memberCount);
-  member.guild.channels.get('765263675434074123').setName('Участников:' + memberCount);
-
-});
 
 client.on('message', msg =>{
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;

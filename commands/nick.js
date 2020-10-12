@@ -12,8 +12,8 @@ exports.run = async (client, message, args) => {
 
   let member = message.guild.members.cache.get(user.id);
 
-  await member.setNickname(nick).catch(err => message.channel.send({embed: {color: "RED", description: `Error: ${err}`}});
-  return message.channel.send('Ник успешно изменён у **${user.tag}** на **${nick}**');
+  await member.setNickname(nick).catch(err => message.channel.send({embed: {color: "RED", description: `Error: ${err}`}}));
+  return message.channel.send({embed: {color: "GREEN", description: `Successfully changed **${user.tag}** nickname to **${nick}**`}});
 }
 
 exports.help = {

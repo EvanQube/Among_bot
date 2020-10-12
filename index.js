@@ -72,7 +72,7 @@ client.on('ready', () => {
   let memberCount = myGuild.memberCount;
   console.log(memberCount);
   let memberCountChannel = myGuild.channels.get('765263675434074123');
-  memberCountChannel.setName(''Участников: ${memberCount}`);
+  memberCountChannel.setName('Участники: ${memberCount}');
 
 });
 

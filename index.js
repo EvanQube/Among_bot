@@ -73,8 +73,6 @@ client.on('ready', () => {
   console.log(memberCount);
   let memberCountChannel = myGuild.channels.get('765263675434074123');
   memberCountChannel.setName('Участников:' + memberCount)
-  .then(result => console.log(result))
-  .catch(error => console.log(error));
 
 });
 

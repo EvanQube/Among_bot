@@ -24,14 +24,10 @@ client.on('message', message =>{
         client.commands.get('among').execute(message, args);
     }
 
-    else if(command === 'rand') {
-      client.commands.get('rand').execute(message, args);
+    else if(command === 'randmeme') {
+      client.commands.get('randmeme').execute(message, args);
     }
 
-    else if(command === 'nick'){
-        const targetmember = message.mentions.members.first();
-        targetmember.modifyNickname(args.after(2))
-    }
 });
 
 client.on('ready', async() => {

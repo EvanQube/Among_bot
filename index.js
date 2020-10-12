@@ -29,8 +29,12 @@ client.on('message', message =>{
     }
 
     else if(command === 'prefix') {
+      if(args === 'default') {
+        prefix = ">";
+      }
+      else {
       prefix = args;
-    }
+    }}
 
 });
 

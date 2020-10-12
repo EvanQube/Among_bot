@@ -71,7 +71,7 @@ client.on('guildMemberAdd', member => {
     let myGuild = client.guilds.cache.get('756567959526309958')
  // Server Id Goes Here
 
-    let membercount = myGuild.memberCount.toLocaleString();
+    let membercount = myGuild.memberCount;
 
     const membercountchannel = myGuild.channels.cache.get('765263675434074123');
  // Channel Id Goes Here
@@ -88,7 +88,7 @@ client.on('guildMemberRemove', member => {
     let myGuild = client.guilds.cache.get('756567959526309958')
  // Server Id Goes Here
 
-    let membercount = myGuild.memberCount.toLocaleString();
+    let membercount = myGuild.memberCount;
 
     const membercountchannel = myGuild.channels.cache.get('765263675434074123');
  // Channel Id Goes Here

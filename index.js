@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 prefix = ">";
 client.login(process.env.token);
-const memberCount = require('./member-count')
 const fs = require('fs');
 
 client.commands = new Discord.Collection();
@@ -13,6 +12,17 @@ for(const file of commandFiles){
 
     client.commands.set(command.name, command);
 }
+
+
+const channel = guild.channels.cache.get('765263675434074123')
+channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)
+
+client.on('guildMemberAdd', (member) => {channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)})
+client.on('guildMemberRemove', (member) => {channel.setName(`Участников: ${guild.memberCount.toLocaleString()}`)})
+
+const guild = client.guilds.cache.get('756567959526309958')
+updateMembers(guild)
+
 
 client.on('message', msg =>{
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;

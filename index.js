@@ -55,7 +55,6 @@ client.on('message', msg =>{
           client.commands.get('helper').execute(msg, args);
         }
       }
-    }
 
     else if(command === 'helper') { //набор на хелперов
     msg.guild.channels.cache.get('765494369473003531').send(`${args}`);

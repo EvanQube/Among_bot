@@ -1,6 +1,6 @@
 module.exports = {
-	name: 'among',
-	description: 'Among Us',
+	name: 'helper',
+	description: 'Заявка на хелпера',
 	execute(msg, args) {
 		msg.channel.send(
       '# - Важная часть/комментарий!' + '\n' +

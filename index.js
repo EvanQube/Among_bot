@@ -60,7 +60,7 @@ client.on('message', msg =>{
       }
 
     else if(command === 'helper') { //набор на хелперов
-    msg.guild.channels.cache.get('765494369473003531').send(`${args}`);
+    msg.guild.channels.cache.get('765598395905605642').send(args);
     msg.delete().catch();
   }
 
@@ -180,11 +180,3 @@ else {
   msg.channel.send('**У вас нет прав на использование этой команды!**')
 }
 }
-});
-
-
-client.on('message', (msg) => {
-  if() {
-    msg.guild.channels.cache.get('765494369473003531').send(msg.content.slice(prefix.length).trim().split(/ +/););
-  }
-});

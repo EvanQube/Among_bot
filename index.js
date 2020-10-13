@@ -19,6 +19,7 @@ client.on('message', msg =>{
 
     const zam = msg.member.roles.cache.get('761188475755167794');
     const admin = msg.member.roles.cache.get('759399027661209610');
+    const tech = msg.member.roles.cache.get('759381562079838288');
     const moderator = msg.member.roles.cache.get('756567959526309961');
     const helper = msg.member.roles.cache.get('759402969803390997');
 
@@ -50,7 +51,7 @@ client.on('message', msg =>{
       msg.delete().catch()}
 
       else if(command === 'helperrules') {
-        if(!admin || !zam) return msg.channel.send('**У вас нет прав на использование этой команды!**')
+        if(!admin || !zam || !tech) return msg.channel.send('**У вас нет прав на использование этой команды!**')
         else {
           client.commands.get('helper').execute(msg, args);
         }

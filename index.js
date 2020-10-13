@@ -47,7 +47,7 @@ client.on('message', msg =>{
 
       else if(command === 'idea') { //Идеи
       client.users.cache.get('352389928543584256').send(args);
-      msg.delete().catch()
+      msg.delete().catch()}
 
       else if(command === 'helperrules') {
         if(!admin || !zam) return msg.channel.send('**У вас нет прав на использование этой команды!**')

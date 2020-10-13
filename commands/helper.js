@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'helper',
 	description: 'Заявка на хелпера',
-	execute(msg, args) {
+	execute(msg) {
 		msg.channel.send(
       '# - Важная часть/комментарий!' + '\n' +
       ' ' + '\n' +

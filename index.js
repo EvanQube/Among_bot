@@ -17,9 +17,9 @@ for(const file of commandFiles){
 client.on('message', msg =>{
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;
 
+    const tech = msg.member.roles.cache.get('759381562079838288');
     const zam = msg.member.roles.cache.get('761188475755167794');
     const admin = msg.member.roles.cache.get('759399027661209610');
-    const tech = msg.member.roles.cache.get('759381562079838288');
     const moderator = msg.member.roles.cache.get('756567959526309961');
     const helper = msg.member.roles.cache.get('759402969803390997');
 
@@ -52,7 +52,7 @@ client.on('message', msg =>{
 
       else if(command === 'helperrules') {
         if(admin || zam || tech) {
-          client.commands.get('helper').execute(msg, args);
+          client.commands.get('helper').execute(msg);
         }
         else {
           msg.channel.send('**У вас нет прав на использование этой команды!**')

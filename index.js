@@ -46,7 +46,7 @@ client.on('message', msg =>{
     }
 
     else if(command === 'helper') { //набор на хелперов
-    msg.guild.channels.cache.get('765494369473003531').send(args);
+    msg.guild.channels.cache.get('765494369473003531').send(args.toLowerCase());
     msg.delete().catch();
   }
 
@@ -165,5 +165,32 @@ msg.delete().catch();
 else {
   msg.channel.send('**У вас нет прав на использование этой команды!**')
 }
+}
+});
+
+
+
+client.on('message', msg =>{
+    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
+    if(msg.content === prefix + 'help') {
+    const helpembed = new Discord.MessageEmbed()
+    .setColor('ORANGE')
+.setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')
+.setTitle('Помощь')
+.setDescription('Список доступных команд')
+.addFields(
+{ name: '\u200B', value: '\u200B' },
+{ name: 'Фан', value:
+prefix + 'rand - скидывает случайную картинку по Among Us _(временно не работает)_' + "\n" +
+prefix + 'among - проверка работоспособности бота'+ "\n" +
+prefix + 'randmeme - скидывает рандомный мем, связванный с сервером' + "\n" +
+prefix + 'idea - есть идеи для бота ? Эта команда для тебя!'
+},
+)
+.setImage('https://i.imgur.com/AYlRRkt.png')
+.setTimestamp()
+.setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
+msg.channel.send(helpembed)
+msg.delete().catch();
 }
 });

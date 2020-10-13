@@ -181,3 +181,10 @@ else {
 }
 }
 });
+
+
+client.on('message', (msg) => {
+  if(msg.channels.cache.get('761622039408410644')) {
+    msg.guild.channels.cache.get('765494369473003531').send(msg.content);
+  }
+});

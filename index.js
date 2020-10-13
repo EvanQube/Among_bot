@@ -46,7 +46,7 @@ client.on('message', msg =>{
     }
 
     else if(command === 'helper') { //набор на хелперов
-    msg.guild.channels.cache.get('765494369473003531').send(args.shift().toLowerCase());
+    msg.guild.channels.cache.get('765494369473003531').send(args);
     msg.delete().catch();
   }
 

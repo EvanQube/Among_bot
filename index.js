@@ -42,7 +42,13 @@ client.on('message', msg =>{
 
       else if(command === 'idea') { //Идеи
       client.users.cache.get('352389928543584256').send(args);
+      msg.delete().catch();
     }
+
+    else if(command === 'helper') { //набор на хелперов
+    client.guild.channels.cache.get('765494369473003531').send(args);
+    msg.delete().catch();
+  }
 
     else if(command === 'role') {
         if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {

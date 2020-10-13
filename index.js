@@ -7,11 +7,6 @@ const fs = require('fs');
 
 client.commands = new Discord.Collection();
 
-const zam = client.guild.member.roles.cache.get('761188475755167794');
-const admin = client.guild.member.roles.cache.get('759399027661209610');
-const moderator = client.guild.member.roles.cache.get('756567959526309961');
-const helper = client.guild.member.roles.cache.get('759402969803390997');
-
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -21,6 +16,11 @@ for(const file of commandFiles){
 
 client.on('message', msg =>{
     if(!msg.content.startsWith(prefix) || msg.author.bot) return;
+
+    const zam = msg.member.roles.cache.get('761188475755167794');
+    const admin = msg.member.roles.cache.get('759399027661209610');
+    const moderator = msg.member.roles.cache.get('756567959526309961');
+    const helper = msg.member.roles.cache.get('759402969803390997');
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();

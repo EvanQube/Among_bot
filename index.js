@@ -7,10 +7,10 @@ const fs = require('fs');
 
 client.commands = new Discord.Collection();
 
-const zam = msg.member.roles.cache.get('761188475755167794');
-const admin = msg.member.roles.cache.get('759399027661209610');
-const moderator = msg.member.roles.cache.get('756567959526309961');
-const helper = msg.member.roles.cache.get('759402969803390997');
+const zam = client.member.roles.cache.get('761188475755167794');
+const admin = client.member.roles.cache.get('759399027661209610');
+const moderator = client.member.roles.cache.get('756567959526309961');
+const helper = client.member.roles.cache.get('759402969803390997');
 
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){

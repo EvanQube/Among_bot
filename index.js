@@ -51,9 +51,11 @@ client.on('message', msg =>{
       msg.delete().catch()}
 
       else if(command === 'helperrules') {
-        if(!admin || !zam || !tech) return msg.channel.send('**У вас нет прав на использование этой команды!**')
-        else {
+        if(admin || zam || tech) {
           client.commands.get('helper').execute(msg, args);
+        }
+        else {
+          msg.channel.send('**У вас нет прав на использование этой команды!**')
         }
       }
 

@@ -7,6 +7,11 @@ const fs = require('fs');
 
 client.commands = new Discord.Collection();
 
+const zam = msg.member.roles.cache.get('761188475755167794');
+const admin = msg.member.roles.cache.get('759399027661209610');
+const moderator = msg.member.roles.cache.get('756567959526309961');
+const helper = msg.member.roles.cache.get('759402969803390997');
+
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 for(const file of commandFiles){
     const command = require(`./commands/${file}`);
@@ -43,6 +48,13 @@ client.on('message', msg =>{
       else if(command === 'idea') { //Идеи
       client.users.cache.get('352389928543584256').send(args);
       msg.delete().catch();
+
+      else if(command === 'helperrules') {
+        if(!admin || !zam) return msg.channel.send('**У вас нет прав на использование этой команды!**')
+        else {
+          client.commands.get('helper').execute(msg, args);
+        }
+      }
     }
 
     else if(command === 'helper') { //набор на хелперов
@@ -165,32 +177,5 @@ msg.delete().catch();
 else {
   msg.channel.send('**У вас нет прав на использование этой команды!**')
 }
-}
-});
-
-
-
-client.on('message', msg =>{
-    if(!msg.content.startsWith(prefix) || msg.author.bot) return;
-    if(msg.content === prefix + 'help') {
-    const helpembed = new Discord.MessageEmbed()
-    .setColor('ORANGE')
-.setAuthor('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg', 'https://discord.gg/C44mCXv')
-.setTitle('Помощь')
-.setDescription('Список доступных команд')
-.addFields(
-{ name: '\u200B', value: '\u200B' },
-{ name: 'Фан', value:
-prefix + 'rand - скидывает случайную картинку по Among Us _(временно не работает)_' + "\n" +
-prefix + 'among - проверка работоспособности бота'+ "\n" +
-prefix + 'randmeme - скидывает рандомный мем, связванный с сервером' + "\n" +
-prefix + 'idea - есть идеи для бота ? Эта команда для тебя!'
-},
-)
-.setImage('https://i.imgur.com/AYlRRkt.png')
-.setTimestamp()
-.setFooter('Among Us по-русски', 'https://i.imgur.com/Tc6QKK1.jpg');
-msg.channel.send(helpembed)
-msg.delete().catch();
 }
 });

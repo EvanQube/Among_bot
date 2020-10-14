@@ -15,7 +15,8 @@ for(const file of commandFiles){
 }
 
 client.on('message', msg =>{
-    if(!msg.content.startsWith(prefix) || msg.author.bot || msg.channel.id === '760540460346638386') return;
+  const notChannel = msg.channel.id === '760540460346638386'
+    if(!msg.content.startsWith(prefix) || msg.author.bot ) return;
 
     const tech = msg.member.roles.cache.get('759381562079838288');
     const zam = msg.member.roles.cache.get('761188475755167794');

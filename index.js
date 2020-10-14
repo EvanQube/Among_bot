@@ -77,8 +77,12 @@ client.on('message', msg =>{
             client.commands.get('hug').execute(msg, args);
           }
 
+    else if(command === 'hit') {
+            client.commands.get('hit').execute(msg, args);
+          }
+
     else if(command === 'help') {
-      client.commands.get('help').execute(msg, client);
+      client.commands.get('help').execute(msg, Discord);
     }
 
 });
@@ -109,9 +113,6 @@ client.on('guildMemberAdd', member => {
 
 
 })
-
-
-
 client.on('guildMemberRemove', member => {
 
     let myGuild = client.guilds.cache.get('756567959526309958')

@@ -2,7 +2,7 @@ module.exports = {
 	name: 'helper',
 	description: 'Заявка на хелпера',
 	execute(msg, args, assist, tech) {
-		if(!assist || !tech) return msg.reply('у вас нет прав использовать эту команду');
+		if(!assist || !tech || !admin) return msg.reply('у вас нет прав использовать эту команду');
 		if(!args[0]) return msg.reply('необходим ваш пинг');
 		if(!args[1]) return msg.reply('необходимо пингануть нарушителя');
 		if(!args[2]) return msg.reply('необходимо указать нарушение');

@@ -10,7 +10,7 @@ module.exports = {
     author = msg.author.id;
     cuts = 4;
     cutsNumber = Math.floor(Math.random() * (cuts - 1)) + 1;
-    msg.channel.send('<@' + author + '>' + '\xa0' + 'отрезал' + '\xa0' + '<@' + user.id + '>' + '\xa0' + 'пипиську', {files: ['./cuts/' 4 cutsNumber + '.gif']})
+    msg.channel.send('<@' + author + '>' + '\xa0' + 'отрезал' + '\xa0' + '<@' + user.id + '>' + '\xa0' + 'пипиську', {files: ['./cuts/' + cutsNumber + '.gif']})
     msg.delete().catch();
   }
   },

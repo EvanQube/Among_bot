@@ -41,7 +41,7 @@ client.on('message', msg =>{
 
     else if(command === 'idea') {client.commands.get('idea').execute(msg, args, client);} //идея
     else if(command === 'cut') {client.commands.get('cut').execute(msg, args);} //Отрезать
-    else if(command === 'helper') {client.commands.get('helper').execute(msg, args);} //Для ассистентов
+    else if(command === 'helper') {client.commands.get('helper').execute(msg, args, assist, tech);} //Для ассистентов
     else if(command === 'hug') {client.commands.get('hug').execute(msg, args);} //Обнять
     else if(command === 'hit') {client.commands.get('hit').execute(msg, args);} //Ударить
     else if(command === 'help') {client.commands.get('help').execute(msg, Discord);} //Команды

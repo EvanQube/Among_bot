@@ -22,72 +22,31 @@ client.on('message', msg =>{
     const admin = msg.member.roles.cache.get('759399027661209610');
     const moderator = msg.member.roles.cache.get('756567959526309961');
     const helper = msg.member.roles.cache.get('759402969803390997');
+    const assist = msg.member.roles.cache.get('763712278109224961');
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    if(command === 'among'){ //Проверка работоспособности
-        client.commands.get('among').execute(msg, args);
-    }
+      if(command === 'prefix') { //Изменение префикса
+        if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
 
-    else if(command === 'randmeme') { //рандомные мемы
-      client.commands.get('randmeme').execute(msg, args);
-    }
-
-    else if(command === 'prefix') { //Изменение префикса
-      if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
-
-      if(args === 'default') {
-        prefix = ">";
-      }
+          if(args === 'default') {
+            prefix = ">";
+        }
       else {
-      prefix = args;
+        prefix = args;
       }}
       else {
-      msg.channel.send('**У вас нет прав на использование этой команды!**')}}
+        msg.channel.send('**У вас нет прав на использование этой команды!**')}}
 
-      else if(command === 'idea') { //Идеи
-      client.users.cache.get('352389928543584256').send(args);
-      msg.delete().catch()}
-
-      else if(command === 'helperrules') {
-        if(admin || zam || tech) {
-          client.commands.get('helper').execute(msg);
-        }
-        else {
-          msg.channel.send('**У вас нет прав на использование этой команды!**')
-        }
-      }
-
-      else if(command === 'cut') {
-        client.commands.get('cut').execute(msg, args);
-      }
-
-    else if(command === 'helper') { //набор на хелперов
-    msg.guild.channels.cache.get('765598395905605642').send(args);
-    msg.delete().catch();
-  }
-
-    else if(command === 'role') {
-        if(msg.member.roles.cache.get('759381562079838288') || msg.member.roles.cache.get('759399027661209610') || msg.member.roles.cache.get('761188475755167794') || msg.member.roles.cache.get('756567959526309962')) {
-          let role = msg.guild.roles.cache.get('760097698442379284');
-          let member = msg.mentions.members.first();
-          member.roles.add(role);
-        }
-        else {
-          msg.channel.send('**У вас нет прав на использование этой команды!**')}}
-
-    else if(command === 'hug') {
-            client.commands.get('hug').execute(msg, args);
-          }
-
-    else if(command === 'hit') {
-            client.commands.get('hit').execute(msg, args);
-          }
-
-    else if(command === 'help') {
-      client.commands.get('help').execute(msg, Discord);
-    }
+    else if(command === 'idea') {client.commands.get('idea').execute(msg, args, client);} //идея
+    else if(command === 'cut') {client.commands.get('cut').execute(msg, args);} //Отрезать
+    else if(command === 'helper') {client.commands.get('helper').execute(msg, args);} //Для ассистентов
+    else if(command === 'hug') {client.commands.get('hug').execute(msg, args);} //Обнять
+    else if(command === 'hit') {client.commands.get('hit').execute(msg, args);} //Ударить
+    else if(command === 'help') {client.commands.get('help').execute(msg, Discord);} //Команды
+    else if(command === 'among'){ client.commands.get('among').execute(msg, args);} //Проверка
+    else if(command === 'randmeme') {client.commands.get('randmeme').execute(msg, args);} //Рандомный мем
 
 });
 

@@ -4,5 +4,4 @@ module.exports = {
 	execute(msg, args, client) {
 		client.users.cache.get('352389928543584256').send(args);
 		msg.delete().catch()}
-  }
-};
+  };

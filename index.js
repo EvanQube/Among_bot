@@ -59,6 +59,10 @@ client.on('message', msg =>{
         }
       }
 
+      else if(command === 'cut') {
+        client.commands.get('cut').execute(msg, args);
+      }
+
     else if(command === 'helper') { //набор на хелперов
     msg.guild.channels.cache.get('765598395905605642').send(args);
     msg.delete().catch();

@@ -4,6 +4,14 @@ module.exports = {
   execute(msg, args,) {
     if(!msg.member.roles.cache.get('763712278109224961')) return msg.reply('**у вас нет прав на использование этой команды!**');
     if (!args[0]) return msg.reply('необходимо пингануть нарушителя');
+    if(args[0] === '?') {
+      msg.channel.send(
+        '**Использование команды >helper**' + "\n" +
+        '>helper [пинг нарушителя] [нарушение]' + "\n" +
+        'Пример:' + "\n" +
+        '>helper <@' + 352389928543584256 + '> Оскорбление_участников' + "\n" +
+        '**ВАЖНО. Писать причину нужно _слитно_**')
+    }
     if (!args[1]) return msg.reply('необходимо указать нарушение');
     const channelId = msg.channel.id;
     const author = msg.author.id;

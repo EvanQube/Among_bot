@@ -14,6 +14,7 @@ module.exports = {
 			'Нарушение:' + '\xa0' + args[1] + '\n' +
 			'Канал:' + '\xa0' + '<#' + channelId + '>'
 		)
+		msg.channel.send('Жалоба успешно отправлена!')
     msg.delete().catch();
 	},
 };

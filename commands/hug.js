@@ -3,8 +3,9 @@ module.exports = {
 	description: 'Hugs',
 	execute(msg, args) {
     user = msg.mentions.users.first();
-    //hugs = 11;
-    //hugsNumber = Math.floor(Math.random() * (hugs - 1)) + 1;
-    msg.channel.send('<@' + user.id + '>')
+    author = msg.author();
+    hugs = 3;
+    hugsNumber = Math.floor(Math.random() * (hug - 1)) + 1;
+    msg.channel.send('<@' + user.id + '>' + '<@' + author.id + '>' + {files: ['./hugs/' + hugsNumber + '.jpg'])
 	},
 };

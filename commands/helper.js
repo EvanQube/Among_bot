@@ -9,10 +9,10 @@ module.exports = {
 		const author = msg.author.id;
 		const helperChannel = msg.guild.channels.cache.get('765598395905605642');
 		helperChannel.send(
-			'<@' + author + '>' + '\n' +
-			args[0] + '\n' +
-			args[1] + '\n' +
-			'<#' + channelId + '>'
+			'Ассистент:' + '\xa0' + '<@' + author + '>' + '\n' +
+			'Нарушитель:' + '\xa0' + args[0] + '\n' +
+			'Нарушение:' + '\xa0' + args[1] + '\n' +
+			'Канал:' + '\xa0' + '<#' + channelId + '>'
 		)
     msg.delete().catch();
 	},

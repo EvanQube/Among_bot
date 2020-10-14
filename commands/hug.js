@@ -3,7 +3,7 @@ module.exports = {
 	description: 'Hugs',
 	execute(msg, args) {
     if(!msg.mentions.users.size) {
-      msg.reply('Нужно отметить пользователся, которого вы хотите обнять.')
+      msg.reply('нужно отметить пользователся, которого вы хотите обнять.')
     }
     else {
     user = msg.mentions.users.first();

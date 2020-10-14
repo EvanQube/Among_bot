@@ -8,9 +8,9 @@ module.exports = {
 .setTitle('Помощь')
 .setDescription('Список доступных команд')
 .addFields(
-{ name: '\u200B', value: '\u200B' },
 { name: 'Фан', value:
-prefix + 'rand - скидывает случайную картинку по Among Us _(временно не работает)_' + "\n" +
+prefix + 'hit - ударить собеседника' + "\n" +
+prefix + 'hug - обнять собеседника' + "\n" +
 prefix + 'among - проверка работоспособности бота'+ "\n" +
 prefix + 'randmeme - скидывает рандомный мем, связванный с сервером' + "\n" +
 prefix + 'idea - есть идеи для бота ? Эта команда для тебя!'

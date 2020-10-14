@@ -19,7 +19,7 @@ client.on('message', msg =>{
 
     const tech = msg.member.roles.cache.get('759381562079838288');
     const zam = msg.member.roles.cache.get('761188475755167794');
-    const admin = msg.member.roles.cache.get('759399027661209610');
+    const admin = msg.member.hasPermission("ADMINISTRATOR");
     const moderator = msg.member.roles.cache.get('756567959526309961');
     const helper = msg.member.roles.cache.get('759402969803390997');
     const assist = msg.member.roles.cache.get('763712278109224961');

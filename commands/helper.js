@@ -2,8 +2,7 @@ module.exports = {
   name: 'helper',
   description: 'Жалоба хелперу',
   execute(msg, args, assist, tech) {
-    if (!msg.member.roles.cache.get('763712278109224961') {msg.reply('у вас нет прав использовать эту команду');}
-		else {
+    if (!msg.member.roles.cache.get('763712278109224961') return msg.reply('у вас нет прав использовать эту команду');
     if (!args[0]) return msg.reply('необходимо пингануть нарушителя');
     if (!args[1]) return msg.reply('необходимо указать нарушение');
     const channelId = msg.channel.id;
@@ -16,6 +15,6 @@ module.exports = {
       'Канал:' + '\xa0' + '<#' + channelId + '>'
     )
     msg.channel.send('Жалоба успешно отправлена!')
-    msg.delete().catch(); }
+    msg.delete().catch();
   },
 };

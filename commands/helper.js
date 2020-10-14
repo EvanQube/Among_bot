@@ -11,7 +11,7 @@ module.exports = {
     helperChannel.send(
       'Ассистент:' + '\xa0' + '<@' + author + '>' + '\n' +
       'Нарушитель:' + '\xa0' + args[0] + '\n' +
-      'Нарушение:' + '\xa0' + args[!0] + '\n' +
+      'Нарушение:' + '\xa0' + args[1] + '\n' +
       'Канал:' + '\xa0' + '<#' + channelId + '>'
     )
     msg.channel.send('Жалоба успешно отправлена!')

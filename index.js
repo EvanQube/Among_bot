@@ -73,9 +73,13 @@ client.on('message', msg =>{
         else {
           msg.channel.send('**У вас нет прав на использование этой команды!**')}}
 
-          else if(command === 'hug') {
+    else if(command === 'hug') {
             client.commands.get('hug').execute(msg, args);
           }
+          
+    else if(command === 'help') {
+      client.commands.get('help').execute(msg, client);
+    }
 
 });
 

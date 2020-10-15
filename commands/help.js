@@ -9,8 +9,7 @@ module.exports = {
       .setDescription('Список доступных команд')
       .addFields({
         name: 'Фан',
-        value: prefix + 'hit - ударить собеседника' + "\n" +
-          prefix + 'hug - обнять собеседника' + "\n" +
+        value:
           prefix + 'cut - отрезать собеседнику пипиську' + "\n" +
           prefix + 'among - проверка работоспособности бота' + "\n" +
           prefix + 'randmeme - скидывает рандомный мем, связванный с сервером' + "\n" +

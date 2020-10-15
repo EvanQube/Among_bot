@@ -24,7 +24,7 @@ client.on('message', msg =>{
     const admin = msg.member.hasPermission("ADMINISTRATOR");
     const moderator = msg.member.roles.cache.get('756567959526309961');
     const helper = msg.member.roles.cache.get('759402969803390997');
-    const assist = msg.member.roles.cache.get('763712278109224961');
+    const assist = msmember.roles.cache.get('763712278109224961');
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
@@ -44,8 +44,6 @@ client.on('message', msg =>{
     else if(command === 'idea') {client.commands.get('idea').execute(msg, args, client);} //идея
     else if(command === 'cut') {client.commands.get('cut').execute(msg, args);} //Отрезать
     else if(command === 'helper') {client.commands.get('helper').execute(msg, args, assist, tech, admin);} //Для ассистентов
-    else if(command === 'hug') {client.commands.get('hug').execute(msg, args);} //Обнять
-    else if(command === 'hit') {client.commands.get('hit').execute(msg, args);} //Ударить
     else if(command === 'help') {client.commands.get('help').execute(msg, Discord);} //Команды
     else if(command === 'among'){ client.commands.get('among').execute(msg, args);} //Проверка
     else if(command === 'randmeme') {client.commands.get('randmeme').execute(msg, args);} //Рандомный мем

@@ -7,9 +7,11 @@ module.exports = {
     if (!args[0]) return msg.reply('необходимо указать on или off')
     if(args[0] === 'on') {
       channel.setRateLimitPerUser(15,'lockdown lvl1')
+      msg.channel.send('**Медленный режим поставлен**')
     }
     if(args[0] === 'off') {
       channel.setRateLimitPerUser(0,'lockdown off')
+      msg.channel.send('**Медленный режим убран**')
     }
       msg.delete().catch();
     }

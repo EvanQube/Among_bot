@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'helper',
-  description: 'Жалоба хелперу',
+  name: 'rating',
+  description: 'Включение режима игр на рейтинг',
   execute(msg, args, ) {
     const channel = msg.guild.channel.get('760540460346638386');
     const admin = msg.member.hasPermission("ADMINISTRATOR");

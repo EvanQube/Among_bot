@@ -49,7 +49,7 @@ client.on('message', msg =>{
     else if(command === 'among'){ client.commands.get('among').execute(msg, args);} //Проверка
     else if(command === 'randmeme') {client.commands.get('randmeme').execute(msg, args);} //Рандомный мем
 
-});
+  });
 
 client.on('ready', async() => {
   console.log('Bot is on !')

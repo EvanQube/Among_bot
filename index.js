@@ -11,8 +11,12 @@ const commandFiles = fs.readdirSync('./commands/');
 const command = require(`./commands/${file}`);
 const funcommand = require(`./commands/fun/${file}`);
 
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`);
+    const funcommand = require(`./commands/fun/${file}`);
 
-    client.commands.set(command.name, command);
+    client.commands.set(command.name, command, funcommand, funcommand.name);
+}
 
 client.on('message', msg =>{
   const notChannel = msg.channel.id === '760540460346638386'

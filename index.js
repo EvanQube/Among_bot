@@ -50,6 +50,7 @@ client.on('message', msg =>{
     else if(command === 'among'){ client.commands.get('among').execute(msg, args);} //Проверка
     else if(command === 'randmeme') {client.commands.get('randmeme').execute(msg, args);} //Рандомный мем
     else if(command === 'rating') {client.commands.get('rating').execute(msg, args);}
+    else if(command === 'link') {client.commands.get('link').execute(msg);}
 });
 
 client.on('ready', async () => {

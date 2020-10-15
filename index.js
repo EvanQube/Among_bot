@@ -24,7 +24,7 @@ client.on('message', msg =>{
     const admin = msg.member.hasPermission("ADMINISTRATOR");
     const moderator = msg.member.roles.cache.get('756567959526309961');
     const helper = msg.member.roles.cache.get('759402969803390997');
-    const assist = msmember.roles.cache.get('763712278109224961');
+    const assist = msg.member.roles.cache.get('763712278109224961');
 
     const args = msg.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();

@@ -8,9 +8,9 @@ const fs = require('fs');
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands/');
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`);
-    const funcommand = require(`./commands/fun/${file}`);
+const command = require(`./commands/${file}`);
+const funcommand = require(`./commands/fun/${file}`);
+
 
     client.commands.set(command.name, command);
 }

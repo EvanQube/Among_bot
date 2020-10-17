@@ -49,6 +49,7 @@ client.on('message', msg =>{
     else if(command === 'randmeme') {client.commands.get('randmeme').execute(msg, args);} //Рандомный мем
     else if(command === 'rating') {client.commands.get('rating').execute(msg, args);}
     else if(command === 'link') {client.commands.get('link').execute(msg);}
+    else if(command === 'halloween2020') {client.commands.get('halloween2020').execute(msg, Discord);}
 });
 
 client.on('ready', async () => {

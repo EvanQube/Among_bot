@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'help',
+  name: 'halloween2020',
   description: 'HelpEmbed',
   execute(msg, Discord) {
     const halloween2020Embed = new Discord.MessageEmbed()
